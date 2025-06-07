@@ -31,5 +31,11 @@ public class StudentControllerImpl implements IStudentController {
         return studentService.GetAllStudents();
     }
 
+    @GetMapping(path = "/list/{id}")
+    @Override
+    public Student getStudentById(@PathVariable(name = "id") Integer id) {
+        return studentService.GetStudentByID(id);
+    }
+
 
 }
