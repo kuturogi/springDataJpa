@@ -4,10 +4,9 @@ import com.bertugkuturoglu.entites.Student;
 import com.bertugkuturoglu.services.IStudentService;
 import com.bertugkuturoglu.controller.IStudentController;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/rest/api/student")
@@ -26,6 +25,11 @@ public class StudentControllerImpl implements IStudentController {
     }
 
 
+    @GetMapping(path = "/list")
+    @Override
+    public List<Student> getAllStudents() {
+        return studentService.GetAllStudents();
+    }
 
 
 }
