@@ -1,6 +1,6 @@
 package com.bertugkuturoglu.services.impl;
 
-import com.bertugkuturoglu.entites.Student;
+import com.bertugkuturoglu.entities.Student;
 import com.bertugkuturoglu.repository.StudentRepository;
 import com.bertugkuturoglu.services.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +39,18 @@ public class StudentServiceImpl implements IStudentService {
             studentRepository.delete(dbStudent);
         }
 
+    }
+
+    @Override
+    public Student updateStudent(Integer id, Student updateStudent) {
+        Student dbStudent = GetStudentByID(id);
+        if (dbStudent!=null){
+            dbStudent.setFirstName(updateStudent.getFirstName());
+            dbStudent.setLastName(updateStudent.getLastName());
+            dbStudent.setBirthOfDate(updateStudent.getBirthOfDate());
+            return studentRepository.save(dbStudent);
+        }
+        return null;
     }
 
 

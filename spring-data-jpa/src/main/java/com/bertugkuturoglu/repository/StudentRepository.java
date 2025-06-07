@@ -1,6 +1,6 @@
 package com.bertugkuturoglu.repository;
 
-import com.bertugkuturoglu.entites.Student;
+import com.bertugkuturoglu.entities.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

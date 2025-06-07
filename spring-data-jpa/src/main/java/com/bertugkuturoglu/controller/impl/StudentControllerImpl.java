@@ -1,6 +1,6 @@
 package com.bertugkuturoglu.controller.impl;
 
-import com.bertugkuturoglu.entites.Student;
+import com.bertugkuturoglu.entities.Student;
 import com.bertugkuturoglu.services.IStudentService;
 import com.bertugkuturoglu.controller.IStudentController;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +41,12 @@ public class StudentControllerImpl implements IStudentController {
     @Override
     public void deleteStudentById(@PathVariable(name = "id") Integer id) {
          studentService.deleteStudentByID(id);
+    }
+
+    @PutMapping(path = "/update/{id}")
+    @Override
+    public Student updateStudent(@PathVariable(name = "id") Integer id, @RequestBody Student updateStudent) {
+        return studentService.updateStudent(id, updateStudent);
     }
 
 
