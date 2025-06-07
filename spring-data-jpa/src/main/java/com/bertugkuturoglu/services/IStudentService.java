@@ -12,4 +12,5 @@ public interface IStudentService {
 
     public Student GetStudentByID(Integer id);
 
+    public void deleteStudentByID(Integer id);
 }
